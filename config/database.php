@@ -9,5 +9,5 @@ $DBUser   = 'root';  //the MySQL user name
 $DBPass   = '';  //the MySQL user password
 $DBName   = 'onlineshoppingcenter'; //the MySQL database name
 //
-?>
+
 
