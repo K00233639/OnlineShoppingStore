@@ -12,5 +12,9 @@
  * @author Zaki
  */
 class CustomerRegisterFormHtmlTags {
+
     //put your code here
+    const Id = "lectID";
+    const FirstName = "lectFirstName";
+
 }

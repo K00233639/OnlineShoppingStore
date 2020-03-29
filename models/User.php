@@ -127,7 +127,7 @@ class User extends Model {
         //encrypt the password
         $password = hash('ripemd160', $password);
         //construct the INSERT SQL
-        $sql="INSERT INTO customer (customerid,Firstname,Lastname,email,phonenumber,password,Region) VALUES ('$lectID','$firstName','$lastName','$email','$phone',$password', $region')";
+        $sql="INSERT INTO customer (customerid,Firstname,Lastname,email,phonenumber,password,Region) VALUES ('$lectID','$firstName','$lastName','$email','$phone', '$password', '$region')";
         
         //$sql="INSERT INTO lecturer (LectID,FirstName,LastName,PassWord) VALUES ('".$postArray['lectID']."','".$postArray['lectFirstName']."','".$postArray['lectLastName']."','".$postArray['lectPass1']."')";
         //execute the insert query

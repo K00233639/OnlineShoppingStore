@@ -19,6 +19,7 @@ session_start(); //join/start a session between thhebrowser client and Apache we
 include_once 'config/config.php';
 include_once 'config/database.php';
 include_once 'formtagsupport/CustomerRegisterFormHtmlTags.php';
+include_once 'formtagsupport/ProductEditFormHtmlTags.php';
 
 //load classes required by the application
 include_once 'classlib/Controller.php';
