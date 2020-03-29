@@ -318,9 +318,9 @@ class Products extends Model{
                                             }
                                             //Edit button
                                             $returnString.= '<td>';
-                                            $returnString.= '<form action="'.$_SERVER["PHP_SELF"].'?pageID=productsEdit" method="post">';
+                                            $returnString.= '<form action="'.$_SERVER["PHP_SELF"].'?pageID=productsEdit&ProductID='.$row['productsid'].'" method="post">';
                                             $returnString.= '<input type="submit" type="button" class="btn btn-warning btn-sm" value="Edit" name="btn">';
-                                            $returnString.= '<input type="hidden" value="'.$row['productsid'].'" name="selectedProductID">';
+                                            $returnString.= '<input type="hidden" value="'.$row['productsid'].'" name="ProductID">';
                                                 //when the button is pressed the 
                                                 //ModuleID 'hidden' value is inserted 
                                                 //into the $_POST array
@@ -352,8 +352,8 @@ class Products extends Model{
                     $returnString.='<form method="post" action="index.php?pageID=productsEdit">';
                     $returnString.='<div class="form-group">';
                     $returnString.='<label for="prodid">Product ID</label><input required readonly type="text" class="form-control" value="'.$row['productsid'].'" id="prodid" name="prodid" pattern="[A-Z0-9]{5,10}" title="ModuleID - Upper Case Letters and digits, 5-10 characters">';
-                    $returnString.='<label for="pname">Product Name</label><input required type="text" class="form-control" value="'.$row['Name'].'" id="pname" name="pname" pattern="[a-zA-Z0-9óáéí\' ]{1,45}" title="Module Title (up to 45 Characters)">';
-                    $returnString.='<label for="pquality">Quality</label><input required type="text" class="form-control" value="'.$row['quality'].'" id="pquality" name="pquality" pattern="[a-zA-Z0-9óáéí\' ]{1,45}" title="Credits (Integer Value)" >';
+                    $returnString.='<label for="pname">Product Name</label><input required type="text" class="form-control" value="'.$row['Name'].'" id="pname" name="pname" pattern="[a-zA-Z0-9óáéí]{1,45}" title="Module Title (up to 45 Characters)">';
+                    $returnString.='<label for="pquality">Quality</label><input required type="text" class="form-control" value="'.$row['quality'].'" id="pquality" name="pquality" pattern="[a-z]{1,45}" title="Quality (up to 45 Characters)" >';
                     $returnString.='<label for="price">Price</label><input required type="text" class="form-control" value="'.$row['price'].'"  id="price" name="price" pattern="[0-9]{1,2}" title="Enter a valid Lecturer ID">';
                     $returnString.='</div>';
                     $returnString.='<button type="submit" class="btn btn-default" name="btn" value="productSave">Save Changes</button>';

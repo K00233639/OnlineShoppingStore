@@ -1,9 +1,9 @@
 <form method="post" action="index.php?pageID=productsAdd">
 <div class="form-group">
 <label for="prodid">Product ID</label><input required type="text" class="form-control" id="prodid" name="prodid" pattern="[A-Z0-9]{5,10}" title="prodID - Upper Case Letters and digits, 5-10 characters">
-<label for="pname">Product Name</label><input required type="text" class="form-control" id="pname" name="pname" pattern="[a-zA-Z0-9óáéí' ]{1,45}" title="Product name (up to 45 Characters)">
-<label for="pquality">Quality</label><input required type="text" class="form-control" id="pquality" name="pquality" pattern="[a-zA-Z0-9óáéí' ]{1,45}" title="quality (Integer Value)" >
-<label for="price">Price</label><input required type="text" class="form-control" id="price" name="price" pattern="[0-9]{1,2}" title="Enter a price">
+<label for="pname">Product Name</label><input required type="text" class="form-control" id="pname" name="pname" pattern="[a-zA-Z0-9óáéí']{1,45}" title="Product name (up to 45 Characters)">
+<label for="pquality">Quality</label><input required type="text" class="form-control" id="pquality" name="pquality" pattern="[a-z0-9]{1,10}" title="quality (up to 45 Characters)" >
+<label for="price">Price</label><input required type="text" class="form-control" id="price" name="price" pattern="[0-9]{1,8}" title="Enter a price">
 </div>
 <button type="submit" class="btn btn-default" name="btn" value='productsAdd'>Add Product</button>
 </form>
