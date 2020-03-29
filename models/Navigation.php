@@ -33,11 +33,11 @@ class Navigation extends Model{
             
             //dropdown menu items for MODULES
             $dropdownMenu='<li class="dropdown">';
-            $dropdownMenu.='<a class="dropdown-toggle" data-toggle="dropdown" href="#">Modules<span class="caret"></span></a>';
+            $dropdownMenu.='<a class="dropdown-toggle" data-toggle="dropdown" href="#">Products<span class="caret"></span></a>';
             $dropdownMenu.='<ul class="dropdown-menu">';
-            $dropdownMenu.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=modulesViewEdit">View/Edit</a></li>';
-            $dropdownMenu.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=modulesAdd">Add</a></li>';
-            $dropdownMenu.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=modulesDelete">Delete</a></li>';
+            $dropdownMenu.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=productsViewEdit">View/Edit</a></li>';
+            $dropdownMenu.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=productsAdd">Add</a></li>';
+            $dropdownMenu.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=productsDelete">Delete</a></li>';
             $dropdownMenu.='</ul></li>'; 
  
          
@@ -77,7 +77,7 @@ class Navigation extends Model{
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         break;                    
-                    case "modules":
+                    case "Products":
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=studentQuery">Student Query</a></li>';
                         $this->menuNav.="$dropdownMenu";  //the modules drop down menu

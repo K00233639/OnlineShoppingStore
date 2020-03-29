@@ -34,7 +34,7 @@ include_once 'models/Student.php';
 include_once 'models/User.php';
 include_once 'models/Login.php';
 include_once 'models/Register.php';
-include_once 'models/Modules.php';
+include_once 'models/Products.php';
 
 //connect to the MySQL Server (with error reporting supression '@')
 @$db=new mysqli($DBServer,$DBUser,$DBPass,$DBName);

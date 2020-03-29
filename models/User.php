@@ -119,13 +119,13 @@ class User extends Model {
         $lectID=$this->db->real_escape_string($postArray['lectID']);
         $firstName=$this->db->real_escape_string($postArray['lectFirstName']);
         $lastName=$this->db->real_escape_string($postArray['lectLastName']);
-        
+        $email=$this->db->real_escape_string($postArray['Myemail']);
         $password=$this->db->real_escape_string($postArray['lectPass1']);
        
         //encrypt the password
         $password = hash('ripemd160', $password);
         //construct the INSERT SQL
-        $sql="INSERT INTO administrator (administratorid,Firstname,Lastname,password) VALUES ('$lectID','$firstName','$lastName','$password')";
+        $sql="INSERT INTO administrator (administratorid,Firstname,Lastname,email,password) VALUES ('$lectID','$firstName','$lastName','$email','$password')";
         
         //$sql="INSERT INTO lecturer (LectID,FirstName,LastName,PassWord) VALUES ('".$postArray['lectID']."','".$postArray['lectFirstName']."','".$postArray['lectLastName']."','".$postArray['lectPass1']."')";
         //execute the insert query

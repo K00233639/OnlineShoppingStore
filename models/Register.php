@@ -92,7 +92,7 @@ class Register extends Model{
                     $this->panelContent_2.='User ID   : '.$this->postArray['lectID'].'<br>';
                     $this->panelContent_2.='Firstname : '.$this->postArray['lectFirstName'].'<br>';
                     $this->panelContent_2.='Lastname  : '.$this->postArray['lectLastName'].'<br>';
-                      
+                       $this->panelContent_2.='email  : '.$this->postArray['Myemail'].'<br>';
                     $this->panelContent_2.='Password1 : '.$this->postArray['lectPass1'].'<br>';
                     $this->panelContent_2.='Password2 : '.$this->postArray['lectPass2'].'<br>';
                    
@@ -110,7 +110,7 @@ class Register extends Model{
                     $this->panelContent_2.='User ID   : '.$this->postArray['lectID'].'<br>';
                     $this->panelContent_2.='Firstname : '.$this->postArray['lectFirstName'].'<br>';
                     $this->panelContent_2.='Lastname  : '.$this->postArray['lectLastName'].'<br>';
-                      
+                       $this->panelContent_2.='email  : '.$this->postArray['Myemail'].'<br>';
                     $this->panelContent_2.='Password1 : '.$this->postArray['lectPass1'].'<br>';
                     $this->panelContent_2.='Password2 : '.$this->postArray['lectPass2'].'<br>';
                                     

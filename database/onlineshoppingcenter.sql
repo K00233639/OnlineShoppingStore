@@ -57,7 +57,7 @@ CREATE TABLE `customer` (
   `email` varchar(45) DEFAULT NULL,
   `phonenumber` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `administrator_administratorid` varchar(10) NOT NULL,
+  `administrator_administratorid` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`customerid`,`administrator_administratorid`),
   KEY `fk_customer_administrator1_idx` (`administrator_administratorid`),
   CONSTRAINT `fk_customer_administrator1` FOREIGN KEY (`administrator_administratorid`) REFERENCES `administrator` (`administratorid`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -82,7 +82,7 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `productsid` varchar(10) NOT NULL,
-  `administrator_administratorid` varchar(10) NOT NULL,
+  `administrator_administratorid` varchar(10) DEFAULT NULL,
   `Name` varchar(45) DEFAULT NULL,
   `quality` varchar(45) DEFAULT NULL,
   `price` varchar(45) DEFAULT NULL,

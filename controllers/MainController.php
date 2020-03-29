@@ -243,7 +243,7 @@ class MainController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_2_panel.php'; //load the view
                     break;
-                case "modules":
+                case "Products":
                     //create objects to generate view content
                     $modules = new UnderConstruction($this->loggedin, $this->pageTitle, strtoupper($this->getArray['pageID']));
                     $navigation = new Navigation($this->loggedin, $this->getArray['pageID']);

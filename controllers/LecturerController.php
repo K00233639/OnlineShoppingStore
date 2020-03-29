@@ -244,9 +244,9 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_2_panel.php'; //load the view
                     break;
-                case "modulesViewEdit":
+                case "productsViewEdit":
                     //create objects to generate view content
-                    $modules = new Modules($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
+                    $modules = new Products($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
                     $navigation = new Navigation($this->user, $this->getArray['pageID']);
                     array_push($this->controllerObjects,$modules,$navigation);
 
@@ -266,9 +266,9 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_2_panel.php'; //load the view
                     break;    
-                case "modulesAdd":
+                case "productsAdd":
                     //create objects to generate view content
-                    $modules = new Modules($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
+                     $modules = new Products($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
                     $navigation = new Navigation($this->user, $this->getArray['pageID']);
                     array_push($this->controllerObjects,$modules,$navigation);
 
@@ -288,9 +288,9 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_2_panel.php'; //load the view
                     break; 
-                case "modulesEdit":
+                case "productsEdit":
                     //create objects to generate view content
-                    $modules = new Modules($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
+                     $modules = new Products($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
                     $navigation = new Navigation($this->user, $this->getArray['pageID']);
                     array_push($this->controllerObjects,$modules,$navigation);
                     
@@ -310,9 +310,9 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_1_panel.php'; //load the view
                     break; 
-                case "modulesDelete":
+                case "productsDelete":
                     //create objects to generate view content
-                    $modules = new Modules($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
+                    $modules = new Products($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
                     $navigation = new Navigation($this->user, $this->getArray['pageID']);
                     array_push($this->controllerObjects,$modules,$navigation);
 
