@@ -72,7 +72,7 @@ extract($data);
      
 <div class="row">
     <!--Left Hand Side (LHS) content panel--> 
-    <div class="col-md-6" style="background-color:white;">
+    <div class="col-md-4" style="background-color:white;">
             <div class="panel panel-default">
               <div class="panel-heading"><?php echo $panelHeadLHS; ?></div>
               <div class="panel-body">
@@ -82,7 +82,7 @@ extract($data);
     </div>
 
     <!--Right Hand Side (RHS) content panel--> 
-    <div class="col-md-6" style="background-color:white;">
+    <div class="col-md-8" style="background-color:white;">
             <div class="panel panel-default">
               <div class="panel-heading"><?php echo $panelHeadRHS; ?></div>
               <div class="panel-body">

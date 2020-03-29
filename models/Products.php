@@ -253,7 +253,6 @@ class Products extends Model{
                         $sql="INSERT INTO products (productsid,Name,quality,price) ";
                         $sql.="VALUES (";
                         $sql.="'".$prodID."',";
-                        $sql.="'".$ref."',";
                         $sql.="'".$productname."',";
                         $sql.=$quality.",";
                         $sql.="'".$price."'";

@@ -30,7 +30,7 @@ class LecturerController extends Controller {
         $this->controllerObjects=array();
         $this->user=$user;
         $this->db=$db;
-        $this->pageTitle='College ONLINE';
+        $this->pageTitle='Online Shopping Store';
     }
 
 //end METHOD - constructor
@@ -222,7 +222,7 @@ class LecturerController extends Controller {
 
 
                     break;            
-                case "studentQuery":
+                case "customerlist":
                     //create objects to generate view content
                     //($loggedin,$postArray,$pageTitle,$pageHead,$database)
                     $student = new Student($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db);

@@ -30,7 +30,7 @@ class GeneralController extends Controller {
         $this->viewData=array();
         $this->controllerObjects=array();
         $this->db=$db;
-        $this->pageTitle='College ONLINE';
+        $this->pageTitle='Onlne Shopping Store';
     }
 
 //end METHOD - constructor

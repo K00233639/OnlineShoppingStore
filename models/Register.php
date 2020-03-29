@@ -93,8 +93,10 @@ class Register extends Model{
                     $this->panelContent_2.='Firstname : '.$this->postArray['lectFirstName'].'<br>';
                     $this->panelContent_2.='Lastname  : '.$this->postArray['lectLastName'].'<br>';
                        $this->panelContent_2.='email  : '.$this->postArray['Myemail'].'<br>';
+                        $this->panelContent_2.='telephonenumber  : '.$this->postArray['phonenumber'].'<br>';
                     $this->panelContent_2.='Password1 : '.$this->postArray['lectPass1'].'<br>';
                     $this->panelContent_2.='Password2 : '.$this->postArray['lectPass2'].'<br>';
+                     $this->panelContent_2.='region  : '.$this->postArray['Region'].'<br>';
                    
                     
                     if ($this->user->register($this->postArray)){
@@ -111,8 +113,10 @@ class Register extends Model{
                     $this->panelContent_2.='Firstname : '.$this->postArray['lectFirstName'].'<br>';
                     $this->panelContent_2.='Lastname  : '.$this->postArray['lectLastName'].'<br>';
                        $this->panelContent_2.='email  : '.$this->postArray['Myemail'].'<br>';
+                        $this->panelContent_2.='telephonenumber  : '.$this->postArray['phonenumber'].'<br>';
                     $this->panelContent_2.='Password1 : '.$this->postArray['lectPass1'].'<br>';
                     $this->panelContent_2.='Password2 : '.$this->postArray['lectPass2'].'<br>';
+                     $this->panelContent_2.='region  : '.$this->postArray['Region'].'<br>';
                                     
                 }
             }

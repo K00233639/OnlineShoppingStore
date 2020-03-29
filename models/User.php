@@ -74,17 +74,17 @@ class User extends Model {
                 $this->loggedin=TRUE;
                 return TRUE;
             }
-            elseif (($rs2->num_rows===1)AND($rs1->num_rows===0)){ //student has logged on
+            else if (($rs2->num_rows===1)AND($rs1->num_rows===0)){ //student has logged on
                 $row=$rs2->fetch_assoc(); //get the users record from the query result             
                 $this->session->setUserID($userID);
-                $this->session->setUserFirstName($row['FirstName']);
-                $this->session->setUserLastName($row['LastName']);
+                $this->session->setUserFirstName($row['Firstname']);
+                $this->session->setUserLastName($row['Lastname']);
                 $this->session->setUserType('Customer'); 
                 $this->session->setLoggedinState(TRUE);
 
                 $this->userID=$userID;
-                $this->userFirstName=$row['FirstName'];
-                $this->userLastName=$row['LastName'];
+                $this->userFirstName=$row['Firstname'];
+                $this->userLastName=$row['Lastname'];
                 $this->userType='Customer';
 
                 $this->loggedin=TRUE;
@@ -120,12 +120,14 @@ class User extends Model {
         $firstName=$this->db->real_escape_string($postArray['lectFirstName']);
         $lastName=$this->db->real_escape_string($postArray['lectLastName']);
         $email=$this->db->real_escape_string($postArray['Myemail']);
+        $phone=$this->db->real_escape_string($postArray['phonenumber']);
         $password=$this->db->real_escape_string($postArray['lectPass1']);
+        $region=$this->db->real_escape_string($postArray['Region']);
        
         //encrypt the password
         $password = hash('ripemd160', $password);
         //construct the INSERT SQL
-        $sql="INSERT INTO administrator (administratorid,Firstname,Lastname,email,password) VALUES ('$lectID','$firstName','$lastName','$email','$password')";
+        $sql="INSERT INTO customer (customerid,Firstname,Lastname,email,phonenumber,password,Region) VALUES ('$lectID','$firstName','$lastName','$email','$phone',$password', $region')";
         
         //$sql="INSERT INTO lecturer (LectID,FirstName,LastName,PassWord) VALUES ('".$postArray['lectID']."','".$postArray['lectFirstName']."','".$postArray['lectLastName']."','".$postArray['lectPass1']."')";
         //execute the insert query

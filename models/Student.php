@@ -71,10 +71,10 @@ class Student extends Model{
         //Panel 1
         public function setPanelHead_1(){//set the panel 1 heading
             if($this->loggedin){
-                $this->panelHead_1='<h3>Student Query by ID</h3>';   
+                $this->panelHead_1='<h3>Number of customers registered</h3>';   
             }
             else{        
-                $this->panelHead_1='<h3>Student Query by ID</h3>'; 
+                $this->panelHead_1='<h3>Number of customers registered</h3>'; 
             }       
         }//end METHOD - //set the panel 1 heading
         
@@ -83,7 +83,7 @@ class Student extends Model{
                     $this->panelContent_1 = file_get_contents('forms/form_StudentQuery.html');  //this reads an external form file into the string           
                 }
                 else{ //if user is not logged in they see some info about bootstrap                
-                    $this->panelContent_1='Please log in to use the student query function. ';;                          
+                    $this->panelContent_1='Please log in to use the customerlist function. ';;                          
                 } 
         }//end METHOD - //set the panel 1 content        
 
@@ -109,29 +109,21 @@ class Student extends Model{
             if($this->loggedin & isset($this->postArray['btn'])){  //check that the user is logged on and a button is pressed
                 switch ($this->postArray['btn']) { //check which button is pressed           
                     case 'studentQuery':  //the student query button has been pressed
-                            $sql='SELECT  studentid,firstname,lastname FROM students WHERE studentID="'.$this->postArray['studentID'].'"'; 
+                            $sql='SELECT  customerid,Firstname,Lastname,email,phonenumber,Region FROM customer'; 
 
-                            $this->panelContent_2.='<p>Selected Student ID: '.$this->postArray['studentID'].'</p></br>';
+                            $this->panelContent_2.='<p>list of registered customers:</p></br>';
                             //$this->panelContent_2='SQL Query= '.$sql; //comment out for diagnostic purposes
                             if((@$rs=$this->db->query($sql))&&($rs->num_rows)){  //execute the query and check it worked and returned data    
                                 //iterate through the resultset to create a HTML table
                                 $this->panelContent_2.= '<table class="table table-bordered">';
-                                $this->panelContent_2.='<tr><th>StudentID</th><th>First Name</th><th>Last Name</th><th>Transcript</th></tr>';//table headings
+                                $this->panelContent_2.='<tr><th>customerID</th><th>First Name</th><th>Last Name</th><th>email</th><th>Phonenumber</th><th>Region</th></tr>';//table headings
                                 while ($row = $rs->fetch_assoc()) { //fetch associative array from resultset
                                         $this->panelContent_2.='<tr>';//--start table row
                                            foreach($row as $key=>$value){
                                                     $this->panelContent_2.= "<td>$value</td>";
                                             }
                                             //Transcript button
-                                            $this->panelContent_2.= '<td>';
-                                            $this->panelContent_2.= '<form action="'.$_SERVER["PHP_SELF"].'?pageID=studentQuery" method="post">';
-                                            $this->panelContent_2.= '<input type="submit" type="button" value="Get Transcript" name="btn">';
-                                            $this->panelContent_2.= '<input type="hidden" value="'.$row['studentid'].'" name="selectedID">';
-                                                //when the button is pressed the 
-                                                //studentID 'hidden' value is inserted 
-                                                //into the $_POST array
-                                            $this->panelContent_2.= '</form>';
-                                            $this->panelContent_2.= '</td>';
+                                         
                                             $this->panelContent_2.= '</tr>';  //end table row
                                         }
                                 $this->panelContent_2.= '</table>';   
@@ -148,41 +140,7 @@ class Student extends Model{
                             $rs->free();
                     break;       //the student query button has been pressed             
                     default :  //the transcript button has been pressed
-                        //$this->panelContent_2='The transcript button has been pressed -  selected ID='.$this->postArray['selectedID']; //comment out for diagnostic purposes
-                        
-                        //use a STORED PROCEDURE to return the transcript
-                        $id=$this->postArray['selectedID'];    
-                        //$sql="CALL sp_transcript('$id')";  //call the stored procedure
-                        
-                        //Or use regular SQL to generate transcript
-                        $sql='SELECT r.ModID,m.ModuleTitle,r.Grade FROM results r,modules m WHERE r.ModID=m.ModuleID AND r.StudID="'.$this->postArray['selectedID'].'"';
-                        
-                        //$this->panelContent_2='SQL Query= '.$sql; //comment out as required for diagnostic purposes
-                        $this->panelContent_2.='<p>TRANSCRIPT of RESULTS for Student ID: '.$this->postArray['selectedID'].'</p></br>';
-                        if(($rs=$this->db->query($sql))&&($rs->num_rows)){  //execute the query and iterate through the resultset
-                                 //iterate through the resultset to create a HTML table
-                                 $this->panelContent_2.= '<table class="table table-bordered">';
-                                 $this->panelContent_2.='<tr><th>Module Code</th><th>Module Title</th><th>Grade</th></tr>';
-                                 //fetch associative array from resultset
-                                 while ($row = $rs->fetch_assoc()) {
-                                     $this->panelContent_2.='<tr>';//--start table row
-                                        foreach($row as $key=>$value){
-                                                 $this->panelContent_2.= "<td>$value</td>";
-                                         }
-                                         $this->panelContent_2.= '</tr>';  //end table row
-                                     }
-                                 $this->panelContent_2.= '</table>';
-                        }  
-                        else{  //resultset is empty or something else went wrong with the query
-                              if (!$rs->num_rows){
-                                 $this->panelContent_2.= '<br>No records have been returned - resultset is empty - Nr Rows = '.$rs->num_rows. '<br>';
-                                 }
-                                 else{
-                                 $this->panelContent_2.= '<br>SQL Query has FAILED - possible problem in the SQL - check for syntax errors<br>';
-                                 }
-                        }
-                        //free result set memory
-                        if ($rs){$rs->free();}    
+                       
                         break;  //the transcript button has been pressed
                     } //end of SWITCH statement to check which button is pressed  
                 }

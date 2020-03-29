@@ -30,7 +30,7 @@ class StudentController extends Controller {
         $this->controllerObjects=array();
         $this->user=$user;
         $this->db=$db;
-        $this->pageTitle='College ONLINE';
+        $this->pageTitle='Online Shopping Store';
     }
 
 //end METHOD - constructor
