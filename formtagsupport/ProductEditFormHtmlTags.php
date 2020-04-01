@@ -11,5 +11,5 @@ class ProductEditFormHtmlTags {
     const ProductId = "ProductId";
     const productCode = "productCode";
     const prodid = "prodid";
-    const selectedProductID = "selectedProductID";   
+   const selectedProductID = "selectedProductID";   
 }

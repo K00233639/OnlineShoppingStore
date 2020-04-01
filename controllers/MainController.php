@@ -57,7 +57,7 @@ class MainController extends Controller {
     public function updateView() { //update the VIEW based on the users page selection
         if (isset($this->getArray['pageID'])) { //check if a page id is contained in the URL
             switch ($this->getArray['pageID']) {
-                case "home":
+                 case "home":
                     //create objects to generate view content
                     $home = new Home($this->loggedin, 'MVC Example', strtoupper($this->getArray['pageID']));
                     $navigation = new Navigation($this->loggedin, $this->getArray['pageID']);

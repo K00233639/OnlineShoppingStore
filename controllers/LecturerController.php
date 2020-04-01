@@ -59,7 +59,7 @@ class LecturerController extends Controller {
     public function updateView() { //update the VIEW based on the users page selection
         if (isset($this->getArray['pageID'])) { //check if a page id is contained in the URL
             switch ($this->getArray['pageID']) {
-                case "home":
+               case "home":
                     //create objects to generate view content
                     $home = new Home($this->user, $this->pageTitle, strtoupper($this->getArray['pageID']));
                     $navigation = new Navigation($this->user, $this->getArray['pageID']);
@@ -288,7 +288,7 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_2_panel.php'; //load the view
                     break; 
-                case "productsEdit":
+                  case "productsEdit":
                     //create objects to generate view content
                      $modules = new Products($this->user,$this->postArray,$this->pageTitle,strtoupper($this->getArray['pageID']),$this->db,$this->getArray['pageID']);
                     $navigation = new Navigation($this->user, $this->getArray['pageID']);
