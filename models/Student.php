@@ -99,13 +99,7 @@ class Student extends Model{
         }//end METHOD - //set the panel 2 heading     
         
         public function setPanelContent_2(){//set the panel 2 content
-            //this function generates page content by determining which button press values are in the POST array
-            //it generates database queries depending on the detected button press
-            //two types of query are supported
-            //  1--> Query by studentID
-            //  2--> Student Transcipt results query
-            //
-            $this->panelContent_2='';  //create an empty string 
+          $this->panelContent_2='';  //create an empty string 
             if($this->loggedin & isset($this->postArray['btn'])){  //check that the user is logged on and a button is pressed
                 switch ($this->postArray['btn']) { //check which button is pressed           
                     case 'studentQuery':  //the student query button has been pressed
@@ -123,7 +117,6 @@ class Student extends Model{
                                                     $this->panelContent_2.= "<td>$value</td>";
                                             }
                                             //Transcript button
-                                         
                                             $this->panelContent_2.= '</tr>';  //end table row
                                         }
                                 $this->panelContent_2.= '</table>';   

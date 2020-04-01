@@ -37,7 +37,9 @@ include_once 'models/User.php';
 include_once 'models/Login.php';
 include_once 'models/Register.php';
 include_once 'models/Products.php';
-
+include_once 'models/shop.php';
+include_once 'models/storage.php';
+include_once 'models/Shoppingkart.php';
 //connect to the MySQL Server (with error reporting supression '@')
 @$db=new mysqli($DBServer,$DBUser,$DBPass,$DBName);
 @$db->query("SET NAMES 'utf8'"); //make sure database connection is set to support UTF8 characterset 

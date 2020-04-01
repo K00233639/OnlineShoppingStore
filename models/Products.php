@@ -422,4 +422,3 @@ class Products extends Model {
 }
 
 //end class
-        
