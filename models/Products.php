@@ -84,7 +84,7 @@ class Products extends Model {
             case 'productsAdd':
                 $this->panelHead_1 = '<h3>Add a new Product</h3>';
                 break;
-            case 'productsEdit':
+           case 'productsEdit':
                 $this->panelHead_1 = '<h3>Edit a Product</h3>';
                 break;
             case 'productsDelete':
@@ -317,8 +317,8 @@ class Products extends Model {
                 }
                 //Edit button
                 $returnString .= '<td>';
-                $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=productsEdit&'.ProductEditFormHtmlTags::ProductId.'=' 
-                        . $row['productsid'] . '" method="post">';
+               $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=productsEdit&'.ProductEditFormHtmlTags::ProductId.'='
+                     . $row['productsid'] . '" method="post">';
                 $returnString .= '<input type="submit" type="button" class="btn btn-warning btn-sm" value="Edit" name="'.ProductEditFormHtmlTags::btn.'">';
                 $returnString .= '<input type="hidden" value="' . $row['productsid'] . '" name="'. ProductEditFormHtmlTags::ProductId .'">';
                 //when the button is pressed the 
