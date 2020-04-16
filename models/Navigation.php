@@ -122,7 +122,7 @@ class Navigation extends Model{
                         break;
                     case "shop":
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
-                        //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
+                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                       $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>';  
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
                     

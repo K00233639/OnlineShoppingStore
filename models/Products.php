@@ -254,10 +254,10 @@ class Products extends Model {
                     $sql .= "VALUES (";
                     $sql .= "'" . $prodID . "',";
                     $sql .= "'" . $productname . "',";
-                    $sql .= $quality . ",";
+                    $sql .= "'" .$quality . "',";
                     $sql .= "'" . $price . "'";
                     $sql .= ")";
-
+                 
                     //execute the INSERT SQL and check that the new row is inserted OK
                     if (($this->db->query($sql) === TRUE) && ($this->db->affected_rows === 1)) {
                         $sql = 'SELECT productsid,Name,quality,price FROM products WHERE productsid="' . $prodID . '"';
