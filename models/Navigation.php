@@ -51,72 +51,45 @@ class Navigation extends Model{
                         //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=customerlist">Customers</a></li>';
                         $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
+                      
+                       
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                     
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         break;
-                    case "messages":
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
-                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=customerlist">Customers</a></li>';
-                        $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
-                        break;                    
+                                      
                     case "customerlist":
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=studentQuery">Student Query</a></li>';
                         $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
+                     
+                       
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                      
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         break;                    
                     case "Products":
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                          $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=customerlist">Customers</a></li>';
                         $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
+                      
+                   
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                     
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         break;                    
-                    case "mygrades":
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=customerlist">Customers</a></li>';
-                        $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
-                        break;
+                  
                     case "account":
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=customerlist">Customers</a></li>';
                         $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
+                    
+                          
                         //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                      
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         break;
-                    case "calculator":
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
-                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=customerlist">Customers</a></li>';
-                        $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
-                        break;                    
+                                      
                     case "logout":  //DUMMY CASE - this case is not actually needed!!
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=register">Register</a></li>';
@@ -126,10 +99,10 @@ class Navigation extends Model{
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=customerlist">Customers</a></li>';
                         $this->menuNav.="$dropdownMenu";  //the modules drop down menu
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">Messages</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=grades">Grades</a></li>';  
+                    
+                       
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                    
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         break;
                 
@@ -143,16 +116,16 @@ class Navigation extends Model{
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>';  
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                   
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
                         break;
                     case "shop":
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
-                        //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=messages">My Messages</a></li>';
+                        //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                       $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>';  
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                    
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
                         break;                                    
@@ -161,7 +134,7 @@ class Navigation extends Model{
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                         //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=mygrades">My Grades</a></li>';  
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                       
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
                         break;
@@ -170,7 +143,7 @@ class Navigation extends Model{
                          $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                       $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>';  
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                       
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                          //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
                         break;                                    
@@ -179,19 +152,11 @@ class Navigation extends Model{
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>';  
                         //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                   
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
                         break;
-                    case "calculator":
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
-                       $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>';  
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
-                        break;                    
+                                   
                     case "logout":  //DUMMY CASE - this case is not actually needed!!
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
@@ -206,7 +171,7 @@ class Navigation extends Model{
                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>';  
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=account">My Account</a></li>';
-                        $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=calculator">Calculator</a></li>';
+                      
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
                         break;

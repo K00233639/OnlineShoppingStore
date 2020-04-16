@@ -80,30 +80,7 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_3_panel.php';  //load the view
                     break;
-                case "messages":
-                    
-
-                    
-                    //get the model
-                    $messages = new UnderConstruction($this->user, $this->pageTitle, strtoupper($this->getArray['pageID']));
-                    $navigation = new Navigation($this->user, $this->getArray['pageID']);
-                    array_push($this->controllerObjects,$messages,$navigation);
-                    //get the content from the model - put into the $data array for the view:
-                    //get the content from the navigation model - put into the $data array for the view:
-                    $data['menuNav'] = $navigation->getMenuNav();       // an array of menu items and associated URLS                    
-                    //get the content from the model - put into the $data array for the view:
-                    $data['pageTitle'] = $messages->getPageTitle();
-                    $data['pageHeading'] = $messages->getPageHeading();
-                    $data['panelHeadRHS'] = $messages->getPanelHead_3(); // A string containing the RHS panel heading/title
-                    $data['panelHeadLHS'] = $messages->getPanelHead_1(); // A string containing the LHS panel heading/title
-                    $data['panelHeadMID'] = $messages->getPanelHead_2();
-                    $data['stringLHS'] = $messages->getPanelContent_1();     // A string intended of the Left Hand Side of the page
-                    $data['stringMID'] = $messages->getPanelContent_2();     // A string intended of the Left Hand Side of the page
-                    $data['stringRHS'] = $messages->getPanelContent_3();     // A string intended of the Right Hand Side of the page
-                    $this->viewData = $data;  //put the content array into a class property for diagnostic purposes
-                    //update the view
-                    include_once 'views/view_navbar_3_panel.php'; //load the view
-                    break;
+                
                 case "register":
                     //get the model
                     $register = new Register($this->postArray,$this->pageTitle, strtoupper($this->getArray['pageID']),$this->db,$this->user);
@@ -144,25 +121,7 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_3_panel.php'; //load the view
                     break;
-                case "calculator":
-                    //create objects to generate view content
-                    $calculator = new Calculator($this->user, $this->postArray, $this->pageTitle, strtoupper($this->getArray['pageID']));
-                    $navigation = new Navigation($this->user, $this->getArray['pageID']);
-                    array_push($this->controllerObjects,$calculator,$navigation);
-
-                    //get the content from the navigation model - put into the $data array for the view:
-                    $data['menuNav'] = $navigation->getMenuNav();       // an array of menu items and associated URLS
-                    //get the content from the page content model  - put into the $data array for the view:
-                    $data['pageTitle'] = $calculator->getPageTitle();
-                    $data['pageHeading'] = $calculator->getPageHeading();
-                    $data['panelHeadRHS'] = $calculator->getPanelHead_2(); // A string containing the RHS panel heading/title
-                    $data['panelHeadLHS'] = $calculator->getPanelHead_1(); // A string containing the LHS panel heading/title 
-                    $data['stringLHS'] = $calculator->getPanelContent_1();     // A string intended of the Left Hand Side of the page
-                    $data['stringRHS'] = $calculator->getPanelContent_2();     // A string intended of the Right Hand Side of the page
-                    $this->viewData = $data;  //put the content array into a class property for diagnostic purposes
-                    //update the view
-                    include_once 'views/view_navbar_2_panel.php'; //load the view
-                    break;
+              
                 case 'login':
                     
                     //process the login details from the login form if the button has been pressed
@@ -332,27 +291,7 @@ class LecturerController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_2_panel.php'; //load the view
                     break; 
-                case "grades":
-                    //create objects to generate view content
-                    $grades = new UnderConstruction($this->user, $this->pageTitle, strtoupper($this->getArray['pageID']));
-                    $navigation = new Navigation($this->user, $this->getArray['pageID']);
-                    array_push($this->controllerObjects,$grades,$navigation);
-
-                    //get the content from the navigation model - put into the $data array for the view:
-                    $data['menuNav'] = $navigation->getMenuNav();       // an array of menu items and associated URLS
-                    //get the content from the page content model  - put into the $data array for the view:
-                    $data['pageTitle'] = $grades->getPageTitle();
-                    $data['pageHeading'] = $grades->getPageHeading();
-                    $data['panelHeadRHS'] = $grades->getPanelHead_3(); // A string containing the RHS panel heading/title
-                    $data['panelHeadLHS'] = $grades->getPanelHead_1(); // A string containing the LHS panel heading/title
-                    $data['panelHeadMID'] = $grades->getPanelHead_2();
-                    $data['stringLHS'] = $grades->getPanelContent_1();     // A string intended of the Left Hand Side of the page
-                    $data['stringMID'] = $grades->getPanelContent_2();     // A string intended of the Left Hand Side of the page
-                    $data['stringRHS'] = $grades->getPanelContent_3();     // A string intended of the Right Hand Side of the page
-                    $this->viewData = $data;  //put the content array into a class property for diagnostic purposes
-                    //update the view
-                    include_once 'views/view_navbar_3_panel.php'; //load the view
-                    break;              
+                            
                 default:
                     //no page selected 
                     //create objects to generate view content

@@ -77,9 +77,9 @@ class Shoppingkart extends Model {
     //Panel 1
     public function setPanelHead_1() {//set the panel 1 heading
         if ($this->loggedin) {
-            $this->panelHead_1 = '<h3>Number of customers registered</h3>';
+            $this->panelHead_1 = '<h3>Number of products in cart</h3>';
         } else {
-            $this->panelHead_1 = '<h3>Number of customers registered</h3>';
+            $this->panelHead_1 = '<h3>Number of products in cart</h3>';
         }
     }
 
@@ -89,7 +89,7 @@ class Shoppingkart extends Model {
         if ($this->loggedin) {  //display the calculator form
             $this->panelContent_1 = file_get_contents('forms/Shoppingkart.html');  //this reads an external form file into the string           
         } else { //if user is not logged in they see some info about bootstrap                
-            $this->panelContent_1 = 'Please log in to use the customerlist function. ';
+            $this->panelContent_1 = 'Please log in to use the shopping cart function. ';
             ;
         }
     }
@@ -159,6 +159,8 @@ class Shoppingkart extends Model {
                     //Or use regular SQL to generate transcript
                     $sql = 'INSERT INTO purchasedproducts(shoppingkart_prodid, productname, productquality, price) select prodid, pname, pquality, price FROM shoppingkart WHERE pname="' . $id . '"';
                       $this->db->query($sql); 
+                      $sql = 'DELETE FROM shoppingkart WHERE pname="' . $id . '"'; 
+                      $this->db->query($sql); 
                       
                     break;
                     
@@ -169,7 +171,7 @@ class Shoppingkart extends Model {
                     break;  //the transcript button has been pressed
             } //end of SWITCH statement to check which button is pressed  
         } else {//no button has been pressed        
-            $this->panelContent_2 = 'Result will appear here';
+            $this->panelContent_2 = 'lists of products will appear here';
         }//end IF     
     }
 

@@ -88,7 +88,7 @@ class shop extends Model {
         if ($this->loggedin) {  //display the calculator form
             $this->panelContent_1 = file_get_contents('forms/shop.html');  //this reads an external form file into the string           
         } else { //if user is not logged in they see some info about bootstrap                
-            $this->panelContent_1 = 'Please log in to use the customerlist function. ';
+            $this->panelContent_1 = 'Please log in to use the shop function. ';
             ;
         }
     }
@@ -112,8 +112,8 @@ class shop extends Model {
 
             switch ($btn_) {  //check which button has been pressed
                 case 'viewSelected':
-                    
-                     //echo "<h1>Debug3</h1>";
+
+                    //echo "<h1>Debug3</h1>";
                     //escape any special characters entered in the form
                     $prodID = $this->db->real_escape_string($this->postArray['productCode']);
 
@@ -133,12 +133,15 @@ class shop extends Model {
                     break;
                 case 'Purchase':
 //                   echo "<h1>Debug5</h1>";
-
                     //if(isset( $this->postArray["addProductButton"])) {
-                        
-                        $prodID = $this->db->real_escape_string($this->postArray[ProductEditFormHtmlTags::ProductId]);
-                        $sql = 'INSERT INTO shoppingkart(prodid,pname,pquality,price) SELECT productsid,Name,quality,price FROM products WHERE productsid="' . $prodID . '"';
-                        $this->db->query($sql); 
+
+                    $prodID = $this->db->real_escape_string($this->postArray[ProductEditFormHtmlTags::ProductId]);
+                    $insertSQL = 'INSERT INTO shoppingkart(prodid,pname,pquality,price) SELECT productsid,Name,quality,price FROM products WHERE productsid="' . $prodID . '"';
+                    $this->db->query($insertSQL);
+                    $deleteSQL = 'DELETE FROM products WHERE productsid="' . $prodID . '"';
+                    $this->db->query($deleteSQL);
+
+                  
 
                     break;
                 default:
@@ -192,7 +195,7 @@ class shop extends Model {
                 }
                 //Edit button
                 $returnString .= '<td>';
-                $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=shop&' 
+                $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=shop&'
                         . ProductEditFormHtmlTags::ProductId . '=' . $row['productsid'] .
                         '" method="post">';
                 $returnString .= '<input type="submit" type="button" class="btn btn-warning btn-sm" value="Purchase" name="btn">';

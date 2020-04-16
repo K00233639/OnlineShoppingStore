@@ -123,25 +123,7 @@ class StudentController extends Controller {
                     include_once 'views/view_navbar_3_panel.php'; //load the view
                     break;
 
-                case "calculator":
-                    //create objects to generate view content
-                    $calculator = new Calculator($this->user, $this->postArray, $this->pageTitle, strtoupper($this->getArray['pageID']));
-                    $navigation = new Navigation($this->user, $this->getArray['pageID']);
-                    array_push($this->controllerObjects, $calculator, $navigation);
-
-                    //get the content from the navigation model - put into the $data array for the view:
-                    $data['menuNav'] = $navigation->getMenuNav();       // an array of menu items and associated URLS
-                    //get the content from the page content model  - put into the $data array for the view:
-                    $data['pageTitle'] = $calculator->getPageTitle();
-                    $data['pageHeading'] = $calculator->getPageHeading();
-                    $data['panelHeadRHS'] = $calculator->getPanelHead_2(); // A string containing the RHS panel heading/title
-                    $data['panelHeadLHS'] = $calculator->getPanelHead_1(); // A string containing the LHS panel heading/title 
-                    $data['stringLHS'] = $calculator->getPanelContent_1();     // A string intended of the Left Hand Side of the page
-                    $data['stringRHS'] = $calculator->getPanelContent_2();     // A string intended of the Right Hand Side of the page
-                    $this->viewData = $data;  //put the content array into a class property for diagnostic purposes
-                    //update the view
-                    include_once 'views/view_navbar_2_panel.php'; //load the view
-                    break;
+                
 
                 case "logout":
 

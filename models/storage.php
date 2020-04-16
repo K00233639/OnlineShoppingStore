@@ -71,10 +71,10 @@ class storage extends Model{
         //Panel 1
         public function setPanelHead_1(){//set the panel 1 heading
             if($this->loggedin){
-                $this->panelHead_1='<h3>Number of customers registered</h3>';   
+                $this->panelHead_1='<h3>Number of purchased products</h3>';   
             }
             else{        
-                $this->panelHead_1='<h3>Number of customers registered</h3>'; 
+                $this->panelHead_1='<h3>Number of purchased products</h3>'; 
             }       
         }//end METHOD - //set the panel 1 heading
         
@@ -83,7 +83,7 @@ class storage extends Model{
                     $this->panelContent_1 = file_get_contents('forms/storage.html');  //this reads an external form file into the string           
                 }
                 else{ //if user is not logged in they see some info about bootstrap                
-                    $this->panelContent_1='Please log in to use the customerlist function. ';;                          
+                    $this->panelContent_1='Please log in to use the storage function. ';;                          
                 } 
         }//end METHOD - //set the panel 1 content        
 
@@ -151,9 +151,9 @@ class storage extends Model{
                       case "sell":
                     $id = $this->postArray['selectedID'];
                    $sql='INSERT INTO products(productsid,  Name, quality, price) SELECT shoppingkart_prodid, productname, productquality, price FROM purchasedproducts WHERE productname="'. $id . '"';
-                           
-                          
-                            $this->db->query($sql); 
+                   $this->db->query($sql);  
+                   $sql='DELETE FROM purchasedproducts WHERE productname="'. $id . '"'; 
+                   $this->db->query($sql);  
                       
                     break;
                      default :  //the transcript button has been pressed
@@ -172,7 +172,7 @@ class storage extends Model{
                     } //end of SWITCH statement to check which button is pressed  
                 }
                 else{//no button has been pressed        
-                    $this->panelContent_2='Result will appear here'; 
+                    $this->panelContent_2='purchased products will appear here'; 
                 }//end IF     
         }//end METHOD - //set the panel 2 content  
         
