@@ -101,10 +101,10 @@ class Products extends Model {
     public function setPanelContent_1() {//set the panel 1 content
         switch ($this->pageID) { //check which button is pressed           
             case 'productsViewEdit':
-                $this->panelContent_1 = file_get_contents('forms/form_modules_select.html');
+                $this->panelContent_1 = file_get_contents('forms/form_products_select.html');
                 break;
             case 'productsAdd':
-                $this->panelContent_1 = file_get_contents('forms/form_modules_add.html');
+                $this->panelContent_1 = file_get_contents('forms/form_products_add.html');
                 break;
             case 'productsEdit':
                 $prodID="";
@@ -123,7 +123,7 @@ class Products extends Model {
                 $this->panelContent_1 = $this->dbEditForm($sql);
                 break;
             case 'productsDelete':
-                $this->panelContent_1 = file_get_contents('forms/form_modules_delete.html');
+                $this->panelContent_1 = file_get_contents('forms/form_products_delete.html');
                 break;
             default:
                 $this->panelContent_1 = 'Invalid Choice';
