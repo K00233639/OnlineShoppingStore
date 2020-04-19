@@ -106,22 +106,22 @@ class shop extends Model {
 //end METHOD - //set the panel 2 heading     
 
     public function setPanelContent_2() {//set the panel 2 content
-        $btn_ = filter_input(INPUT_POST, ProductEditFormHtmlTags::btn);
+       
         $this->panelContent_2 = '';  //create an empty string 
-        if (isset($btn_)) {
+        if (isset($this->postArray['btn'])) {
 
-            switch ($btn_) {  //check which button has been pressed
+            switch ($this->postArray['btn']) {  //check which button has been pressed
                 case 'viewSelected':
 
                     //echo "<h1>Debug3</h1>";
                     //escape any special characters entered in the form
-                    $prodID = $this->db->real_escape_string($this->postArray['productCode']);
+                    $prodname = $this->db->real_escape_string($this->postArray['productname']);
 
                     //construct the SELECT SQL
-                    $sql = 'SELECT productsid,Name,quality,price FROM products WHERE Name="' . $prodID . '"';
+                    $sql = 'SELECT productsid,Name,quality,price FROM products WHERE Name="' . $prodname . '"';
 
                     //execute the query and construct the output panel string
-                    $this->panelContent_2 .= '<p>Selected Product: ' . $this->postArray['productCode'] . '</p></br>';
+                    $this->panelContent_2 .= '<p>Selected Product: ' . $this->postArray['productname'] . '</p></br>';
                     $this->panelContent_2 .= $this->dbViewEditQuery($sql);
                     break;
                 case 'viewAll':
@@ -135,7 +135,7 @@ class shop extends Model {
 //                   echo "<h1>Debug5</h1>";
                     //if(isset( $this->postArray["addProductButton"])) {
 
-                    $prodID = $this->db->real_escape_string($this->postArray[ProductEditFormHtmlTags::ProductId]);
+                    $prodID = $this->db->real_escape_string($this->postArray['ProductId']);
                     $insertSQL = 'INSERT INTO shoppingkart(prodid,pname,pquality,price) SELECT productsid,Name,quality,price FROM products WHERE productsid="' . $prodID . '"';
                     $this->db->query($insertSQL);
                     $deleteSQL = 'DELETE FROM products WHERE productsid="' . $prodID . '"';
@@ -195,11 +195,10 @@ class shop extends Model {
                 }
                 //Edit button
                 $returnString .= '<td>';
-                $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=shop&'
-                        . ProductEditFormHtmlTags::ProductId . '=' . $row['productsid'] .
+                $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=shop&ProductId=' . $row['productsid'] .
                         '" method="post">';
                 $returnString .= '<input type="submit" type="button" class="btn btn-warning btn-sm" value="Purchase" name="btn">';
-                $returnString .= '<input type="hidden" value="' . $row['productsid'] . '" name="' . ProductEditFormHtmlTags::ProductId . '">';
+                $returnString .= '<input type="hidden" value="' . $row['productsid'] . '" name="ProductId">';
                 //when the button is pressed the 
                 //ModuleID 'hidden' value is inserted 
                 //into the $_POST array

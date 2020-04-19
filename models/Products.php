@@ -107,15 +107,15 @@ class Products extends Model {
                 $this->panelContent_1 = file_get_contents('forms/form_products_add.html');
                 break;
             case 'productsEdit':
-                $prodID="";
-                switch (filter_input(INPUT_POST, ProductEditFormHtmlTags::btn)) {
+              
+                switch ($this->postArray['btn']) {
                     case 'Edit':
                         //escape any special characters entered in the form
-                        $prodID = $this->db->real_escape_string($this->postArray[ProductEditFormHtmlTags::ProductId]);
+                        $prodID = $this->db->real_escape_string($this->postArray['ProductId']);
                         break;
                     default :
                         //escape any special characters entered in the form
-                        $prodID = $this->db->real_escape_string($this->postArray[ProductEditFormHtmlTags::selectedProductID]);
+                        $prodID = $this->db->real_escape_string($this->postArray['selectedProductID']);
                         break;
                 }
                 $sql = "SELECT productsid,Name,quality,price FROM products WHERE productsid='".$prodID."'";
@@ -162,10 +162,10 @@ class Products extends Model {
         switch ($this->pageID) { //check which button is pressed           
             case 'productsViewEdit':  //the student query button has been pressed
 
-                $btn_ = filter_input(INPUT_POST, ProductEditFormHtmlTags::btn);
-                if (isset($btn_)) {
+               
+                if (isset($this->postArray['btn'])) {
                     //check if a button has been pressed
-                    switch ($btn_) {  //check which button has been pressed
+                    switch ($this->postArray['btn']) {  //check which button has been pressed
                         case 'viewSelected':
                             //escape any special characters entered in the form
                             $prodID = $this->db->real_escape_string($this->postArray['productCode']);
@@ -317,10 +317,10 @@ class Products extends Model {
                 }
                 //Edit button
                 $returnString .= '<td>';
-               $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=productsEdit&'.ProductEditFormHtmlTags::ProductId.'='
+               $returnString .= '<form action="' . $_SERVER["PHP_SELF"] . '?pageID=productsEdit&ProductId='
                      . $row['productsid'] . '" method="post">';
-                $returnString .= '<input type="submit" type="button" class="btn btn-warning btn-sm" value="Edit" name="'.ProductEditFormHtmlTags::btn.'">';
-                $returnString .= '<input type="hidden" value="' . $row['productsid'] . '" name="'. ProductEditFormHtmlTags::ProductId .'">';
+                $returnString .= '<input type="submit" type="button" class="btn btn-warning btn-sm" value="Edit" name="btn">';
+                $returnString .= '<input type="hidden" value="' . $row['productsid'] . '" name="ProductId">';
                 //when the button is pressed the 
                 //ModuleID 'hidden' value is inserted 
                 //into the $_POST array
