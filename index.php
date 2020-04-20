@@ -13,6 +13,7 @@
  * 
  */
 
+//echo '<h1>here</h1>';
 session_start(); //join/start a session between thhebrowser client and Apache web server
 
 //load application configuration

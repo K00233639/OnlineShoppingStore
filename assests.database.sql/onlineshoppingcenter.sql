@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2020 at 09:48 PM
+-- Generation Time: Apr 20, 2020 at 02:14 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -100,7 +100,9 @@ INSERT INTO `products` (`productsid`, `manufacturref`, `Name`, `quality`, `price
 ('A543', NULL, 'fridge', 'good', '22'),
 ('B1234', NULL, 'computer', 'good', '52'),
 ('B1236', 'Ba123', 'computer', 'bad', '99'),
-('C2222', NULL, 'computer', '5', '24');
+('C2222', NULL, 'computer', '5', '24'),
+('T2113', NULL, 'Battery', 'good', '23'),
+('X3333', NULL, 'Television', 'notgood', '54');
 
 -- --------------------------------------------------------
 
