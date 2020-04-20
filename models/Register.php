@@ -159,4 +159,3 @@ class Register extends Model{
 
         
 }//end class
-        

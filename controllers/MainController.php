@@ -119,28 +119,7 @@ class MainController extends Controller {
                     //update the view
                     include_once 'views/view_navbar_2_panel.php'; //load the view
                     break;
-                case "account":
-                    //create objects to generate view content
-                    $account = new UnderConstruction($this->loggedin, 'MVC Example', strtoupper($this->getArray['pageID']));
-                    $navigation = new Navigation($this->loggedin, $this->getArray['pageID']);
-                    array_push($this->controllerObjects, $account, $navigation);
-
-                    //get the content from the navigation model - put into the $data array for the view:
-                    $data['menuNav'] = $navigation->getMenuNav();       // an array of menu items and associated URLS
-                    //get the content from the page content model  - put into the $data array for the view:
-                    $data['pageTitle'] = $account->getPageTitle();
-                    $data['pageHeading'] = $account->getPageHeading();
-                    $data['panelHeadRHS'] = $account->getPanelHead_3(); // A string containing the RHS panel heading/title
-                    $data['panelHeadLHS'] = $account->getPanelHead_1(); // A string containing the LHS panel heading/title
-                    $data['panelHeadMID'] = $account->getPanelHead_2();
-                    $data['stringLHS'] = $account->getPanelContent_1();     // A string intended of the Left Hand Side of the page
-                    $data['stringMID'] = $account->getPanelContent_2();     // A string intended of the Left Hand Side of the page
-                    $data['stringRHS'] = $account->getPanelContent_3();     // A string intended of the Right Hand Side of the page
-                    $this->viewData = $data;  //put the content array into a class property for diagnostic purposes
-                    //update the view
-                    include_once 'views/view_navbar_3_panel.php'; //load the view
-                    break;
-                
+          
                 case 'login':
 
                     //process the login details from the login form if the button has been pressed

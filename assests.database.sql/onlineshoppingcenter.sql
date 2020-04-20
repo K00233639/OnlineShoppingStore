@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2020 at 02:14 AM
+-- Generation Time: Apr 20, 2020 at 08:04 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `onlineshoppingcenter`
 --
-CREATE DATABASE IF NOT EXISTS `onlineshoppingcenter` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `onlineshoppingcenter`;
 
 -- --------------------------------------------------------
 
@@ -43,7 +41,8 @@ CREATE TABLE `administrator` (
 --
 
 INSERT INTO `administrator` (`administratorid`, `Firstname`, `Lastname`, `email`, `password`) VALUES
-('A01234', 'Zak', 'Tak', 'M@gmail.com', '5200b92b38effe6dc43fe6bf3e549e3704a4656f');
+('A01234', 'Zak', 'Tak', 'M@gmail.com', '5200b92b38effe6dc43fe6bf3e549e3704a4656f'),
+('A02468', 'Zakery', 'Winston', 'Winston@gmail.com', '5200b92b38effe6dc43fe6bf3e549e3704a4656f');
 
 -- --------------------------------------------------------
 
@@ -66,14 +65,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customerid`, `Firstname`, `Lastname`, `email`, `phonenumber`, `password`, `Region`) VALUES
-('', '', 'sdfsd', 'sdf@dfsg', 'sdfg', '748ce6bf1869dc37e64f8aa9e8601f32b7d6a4cb', '1234'),
-('A01234', 'qedq', 'eete3', 'wefw@gmail.com', '24213312133332', '894884a795e4d6753ae0d0e497d715487be9f02b', 'Europe'),
-('A43232', 'wdwadew', 'wefwqefq', 'dsasa@gmail.com', '42145434543', '033621b7e6eb2ddf33f7a4ca9dad0094669bb2b5', 'America'),
-('B02323', 'connor', 'james', 'ja@gmail.com', '5412387964', '0f82323837f19cffe4f66b996454a6e4c81e431b', 'USA'),
-('B1285', 'Jane', 'Dorothy', 'a@gmail.com', '5223234556', 'Bd1234567', 'American'),
-('C0987', 'Mandy', 'Dan', 'Do@gmail.com', '5867304921', '3e8b8f7519c272b2484a0c49134415f35cd054d7', 'Europe'),
-('D3232', 'asaa', 'ewqw', 'qww@gmail.com', '134543635', 'a4c82710f2521ecb4db25edac5b0f1e7ac8843ec', 'USA'),
-('X3434', 'Johny', 'Long', 'LJ@gmail.com', '9786453120', '5200b92b38effe6dc43fe6bf3e549e3704a4656f', 'USA');
+('D3666', 'Tak', 'Taky', 'Lq@gmail.com', '84934759383', '5200b92b38effe6dc43fe6bf3e549e3704a4656f', 'USA');
 
 -- --------------------------------------------------------
 
@@ -96,10 +88,10 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`productsid`, `manufacturref`, `Name`, `quality`, `price`) VALUES
 ('A112112', NULL, 'csceee23', '222222', '52'),
 ('A12322', NULL, 'dssdds', '121435', '1231313'),
-('A2322', NULL, '23332r', '12233', '12'),
-('A543', NULL, 'fridge', 'good', '22'),
+('A2322', NULL, '23332r', 'bad', '40'),
 ('B1234', NULL, 'computer', 'good', '52'),
 ('B1236', 'Ba123', 'computer', 'bad', '99'),
+('B6565', NULL, 'computera', 'good', '36'),
 ('C2222', NULL, 'computer', '5', '24'),
 ('T2113', NULL, 'Battery', 'good', '23'),
 ('X3333', NULL, 'Television', 'notgood', '54');
@@ -127,7 +119,6 @@ CREATE TABLE `purchasedproducts` (
 --
 
 INSERT INTO `purchasedproducts` (`purchasedid`, `shoppingkart_custid`, `shoppingkart_prodid`, `customer_customerid`, `customer_administrator_administratorid`, `productname`, `productquality`, `price`, `overallprice`) VALUES
-(NULL, NULL, '12232', NULL, NULL, '1q2qqw7658', 'bad', '12', NULL),
 (NULL, NULL, 'A543', NULL, NULL, 'fridge', 'good', '22', NULL),
 (NULL, NULL, 'C2222', NULL, NULL, 'computer', '5', '24', NULL);
 
@@ -150,10 +141,10 @@ CREATE TABLE `shoppingkart` (
 --
 
 INSERT INTO `shoppingkart` (`custid`, `prodid`, `pname`, `pquality`, `price`) VALUES
-(NULL, '12232', '1q2qqw7658', 'bad', '12'),
 (NULL, '123456', '55555555', '55555', '55'),
 (NULL, 'A12322', 'dssdds', '121435', '1231313'),
 (NULL, 'A2322', '23332r', '12233', '12'),
+(NULL, 'A543', 'fridge', 'good', '22'),
 (NULL, 'C2222', 'computer', '5', '24');
 
 --
