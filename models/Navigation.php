@@ -120,7 +120,7 @@ class Navigation extends Model{
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=logout">Log Out</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=storage">Storage</a></li>';
                         break;                                    
-                    case "Shoppingkart":
+                    case "shopkart":
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=home">Home</a></li>';
                         $this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shop">Shop</a></li>';
                         //$this->menuNav.='<li><a href="'.$_SERVER['PHP_SELF'].'?pageID=shopkart">Shopping kart</a></li>'; 

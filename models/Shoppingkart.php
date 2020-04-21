@@ -112,13 +112,11 @@ class Shoppingkart extends Model {
         //two types of query are supported
         //  1--> Query by studentID
         //  2--> Student Transcipt results query
-        //
             $this->panelContent_2 = '';  //create an empty string 
         if ($this->loggedin & isset($this->postArray['btn'])) {  //check that the user is logged on and a button is pressed
             switch ($this->postArray['btn']) { //check which button is pressed           
                 case 'studentQuery':  //the student query button has been pressed
                     $sql = 'SELECT prodid, pname, pquality, price FROM shoppingkart;';
-
                     $this->panelContent_2 .= '<p>list of selected products:</p></br>';
                     //$this->panelContent_2='SQL Query= '.$sql; //comment out for diagnostic purposes
                     if ((@$rs = $this->db->query($sql)) && ($rs->num_rows)) {  //execute the query and check it worked and returned data    
@@ -147,9 +145,7 @@ class Shoppingkart extends Model {
                         if (!$rs->num_rows) {
                             $this->panelContent_2 .= '<br>No records have been returned - resultset is empty - Nr Rows = ' . $rs->num_rows . '<br>';
                         } else {
-                            $this->panelContent_2 .= '<br>SQL Query has FAILED - possible problem in the SQL - check for syntax errors<br>';
-                        }
-                    }
+                            $this->panelContent_2 .= '<br>SQL Query has FAILED - possible problem in the SQL - check for syntax errors<br>';       }          }
                     //free result set memory
                     $rs->free();
                     break;       //the student query button has been pressed      
@@ -157,7 +153,7 @@ class Shoppingkart extends Model {
                       $id = $this->postArray['selectedID'];
                     //$sql="CALL sp_transcript('$id')";  //call the stored procedure
                     //Or use regular SQL to generate transcript
-                    $sql = 'INSERT INTO purchasedproducts(shoppingkart_prodid, productname, productquality, price) select prodid, pname, pquality, price FROM shoppingkart WHERE pname="' . $id . '"';
+    $sql = 'INSERT INTO purchasedproducts(shoppingkart_prodid, productname, productquality, price) select prodid, pname, pquality, price FROM shoppingkart WHERE pname="' . $id . '"';
                       $this->db->query($sql); 
                       $sql = 'DELETE FROM shoppingkart WHERE pname="' . $id . '"'; 
                       $this->db->query($sql); 

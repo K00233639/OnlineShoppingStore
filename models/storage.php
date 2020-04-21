@@ -104,13 +104,11 @@ class storage extends Model{
             //two types of query are supported
             //  1--> Query by studentID
             //  2--> Student Transcipt results query
-            //
             $this->panelContent_2='';  //create an empty string 
             if($this->loggedin & isset($this->postArray['btn'])){  //check that the user is logged on and a button is pressed
                 switch ($this->postArray['btn']) { //check which button is pressed           
                     case 'studentQuery':  //the student query button has been pressed
                             $sql='SELECT  shoppingkart_prodid, productname, productquality, price FROM purchasedproducts'; 
-
                             $this->panelContent_2.='<p>list of purchased customers:</p></br>';
                             //$this->panelContent_2='SQL Query= '.$sql; //comment out for diagnostic purposes
                             if((@$rs=$this->db->query($sql))&&($rs->num_rows)){  //execute the query and check it worked and returned data    
@@ -120,8 +118,7 @@ class storage extends Model{
                                 while ($row = $rs->fetch_assoc()) { //fetch associative array from resultset
                                         $this->panelContent_2.='<tr>';//--start table row
                                            foreach($row as $key=>$value){
-                                                    $this->panelContent_2.= "<td>$value</td>";
-                                             }
+                                                    $this->panelContent_2.= "<td>$value</td>";               }
                                             //Transcript button
                                             $this->panelContent_2.= '<td>';
                                             $this->panelContent_2.= '<form action="'.$_SERVER["PHP_SELF"].'?pageID=storage" method="post">';
@@ -134,23 +131,18 @@ class storage extends Model{
                                             $this->panelContent_2.= '</td>';
                                             $this->panelContent_2.= '</tr>';  //end table row
                                         }
-                                $this->panelContent_2.= '</table>';   
-                            }  
+                                $this->panelContent_2.= '</table>';                 }  
                             else{  //resultset is empty or something else went wrong with the query
                                  if (!$rs->num_rows){
-                                    $this->panelContent_2.= '<br>No records have been returned - resultset is empty - Nr Rows = '.$rs->num_rows. '<br>';
-                                    }
+                                    $this->panelContent_2.= '<br>No records have been returned - resultset is empty - Nr Rows = '.$rs->num_rows. '<br>';                   }
                                     else{
-                                    $this->panelContent_2.= '<br>SQL Query has FAILED - possible problem in the SQL - check for syntax errors<br>';
-                                    }
-                            }
+                                    $this->panelContent_2.= '<br>SQL Query has FAILED - possible problem in the SQL - check for syntax errors<br>';      }          }
                             //free result set memory
                             $rs->free();
-                            
-                    break;       //the student query button has been pressed    
+                             break;       //the student query button has been pressed    
                       case "sell":
                     $id = $this->postArray['selectedID'];
-                   $sql='INSERT INTO products(productsid,  Name, quality, price) SELECT shoppingkart_prodid, productname, productquality, price FROM purchasedproducts WHERE productname="'. $id . '"';
+       $sql='INSERT INTO products(productsid,  Name, quality, price) SELECT shoppingkart_prodid, productname, productquality, price FROM purchasedproducts WHERE productname="'. $id . '"';
                    $this->db->query($sql);  
                    $sql='DELETE FROM purchasedproducts WHERE productname="'. $id . '"'; 
                    $this->db->query($sql);  
@@ -159,13 +151,9 @@ class storage extends Model{
                      default :  //the transcript button has been pressed
                         //$this->panelContent_2='The transcript button has been pressed -  selected ID='.$this->postArray['selectedID']; //comment out for diagnostic purposes
                         
-                        //use a STORED PROCEDURE to return the transcript
-                    $this->panelContent_2.=   $id=$this->postArray['selectedID'];    
-                        //$sql="CALL sp_transcript('$id')";  //call the stored procedure
-                        
-                        //Or use regular SQL to generate transcript
-                      $sql='INSERT INTO products(productsid,  Name, quality, price) SELECT shoppingkart_prodid, productname, productquality, price FROM purchasedproducts WHERE shoppingkart_prodid="'.$this->postArray['selectedID']. '"';
-                        
+                        //use a STORED PROCEDURE to return the transcript 
+                        //$sql="CALL sp_transcript('$id')";  //call the stored procedure                      
+                        //Or use regular SQL to generate transcript                   
                         //$this->panelContent_2='SQL Query= '.$sql; //comment out as required for diagnostic purposes
                     
                         break;  //the transcript button has been pressed

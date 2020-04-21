@@ -161,8 +161,6 @@ class Products extends Model {
         $this->panelContent_2 = '';  //create an empty string 
         switch ($this->pageID) { //check which button is pressed           
             case 'productsViewEdit':  //the student query button has been pressed
-
-               
                 if (isset($this->postArray['btn'])) {
                     //check if a button has been pressed
                     switch ($this->postArray['btn']) {  //check which button has been pressed
@@ -191,8 +189,7 @@ class Products extends Model {
                     }
                 } else { //no button has been pressed
                     //set the output panel string
-                    $this->panelContent_2 .= '<p>Please select a Product or ALL Product to view</p></br>';
-                }
+                    $this->panelContent_2 .= '<p>Please select a Product or ALL Product to view</p></br>'; }
                 break;       //the student query button has been pressed             
             case 'productsEdit':
 
@@ -308,7 +305,7 @@ class Products extends Model {
         $returnString = '';
         if ((@$rs = $this->db->query($sql)) && ($rs->num_rows)) {  //execute the query and check it worked and returned data    
             //iterate through the resultset to create a HTML table
-            $returnString .= '<h1>Is it this one.</h1>'. '<table class="table table-bordered">';
+            $returnString .= '<table class="table table-bordered">';
             $returnString .= '<tr><th>ProductID</th><th>ProductName</th><th>Quality</th><th>Price</th></tr>'; //table headings
             while ($row = $rs->fetch_assoc()) { //fetch associative array from resultset
                 $returnString .= '<tr>'; //--start table row

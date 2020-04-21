@@ -105,8 +105,7 @@ class shop extends Model {
 
 //end METHOD - //set the panel 2 heading     
 
-    public function setPanelContent_2() {//set the panel 2 content
-       
+    public function setPanelContent_2() {//set the panel 2 content       
         $this->panelContent_2 = '';  //create an empty string 
         if (isset($this->postArray['btn'])) {
 
@@ -139,10 +138,7 @@ class shop extends Model {
                     $insertSQL = 'INSERT INTO shoppingkart(prodid,pname,pquality,price) SELECT productsid,Name,quality,price FROM products WHERE productsid="' . $prodID . '"';
                     $this->db->query($insertSQL);
                     $deleteSQL = 'DELETE FROM products WHERE productsid="' . $prodID . '"';
-                    $this->db->query($deleteSQL);
-
-                  
-
+                    $this->db->query($deleteSQL);                  
                     break;
                 default:
                     //set the output panel string
@@ -151,9 +147,7 @@ class shop extends Model {
             }
         } else { //no button has been pressed
             //set the output panel string
-            $this->panelContent_2 .= '<p>Please select a Product or ALL Product to view</p></br>';
-        }
-    }
+            $this->panelContent_2 .= '<p>Please select a Product or ALL Product to view</p></br>';      }   }
 
 //end METHOD - //set the panel 2 content  
     //Panel 3
