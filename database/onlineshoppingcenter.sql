@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2020 at 08:04 PM
+-- Generation Time: Apr 21, 2020 at 06:18 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -41,7 +41,6 @@ CREATE TABLE `administrator` (
 --
 
 INSERT INTO `administrator` (`administratorid`, `Firstname`, `Lastname`, `email`, `password`) VALUES
-('A01234', 'Zak', 'Tak', 'M@gmail.com', '5200b92b38effe6dc43fe6bf3e549e3704a4656f'),
 ('A02468', 'Zakery', 'Winston', 'Winston@gmail.com', '5200b92b38effe6dc43fe6bf3e549e3704a4656f');
 
 -- --------------------------------------------------------
@@ -65,6 +64,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customerid`, `Firstname`, `Lastname`, `email`, `phonenumber`, `password`, `Region`) VALUES
+('D0789', 'Patrick', 'Kevins', 'Kev@gmail.com', '1029384756', '033621b7e6eb2ddf33f7a4ca9dad0094669bb2b5', 'Europe'),
 ('D3666', 'Tak', 'Taky', 'Lq@gmail.com', '84934759383', '5200b92b38effe6dc43fe6bf3e549e3704a4656f', 'USA');
 
 -- --------------------------------------------------------
@@ -86,15 +86,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`productsid`, `manufacturref`, `Name`, `quality`, `price`) VALUES
-('A112112', NULL, 'csceee23', '222222', '52'),
-('A12322', NULL, 'dssdds', '121435', '1231313'),
-('A2322', NULL, '23332r', 'bad', '40'),
-('B1234', NULL, 'computer', 'good', '52'),
-('B1236', 'Ba123', 'computer', 'bad', '99'),
+('A543', NULL, 'fridge', 'good', '22'),
 ('B6565', NULL, 'computera', 'good', '36'),
 ('C2222', NULL, 'computer', '5', '24'),
 ('T2113', NULL, 'Battery', 'good', '23'),
-('X3333', NULL, 'Television', 'notgood', '54');
+('X3333', NULL, 'Television', 'bad', '75');
 
 -- --------------------------------------------------------
 
@@ -114,14 +110,6 @@ CREATE TABLE `purchasedproducts` (
   `overallprice` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `purchasedproducts`
---
-
-INSERT INTO `purchasedproducts` (`purchasedid`, `shoppingkart_custid`, `shoppingkart_prodid`, `customer_customerid`, `customer_administrator_administratorid`, `productname`, `productquality`, `price`, `overallprice`) VALUES
-(NULL, NULL, 'A543', NULL, NULL, 'fridge', 'good', '22', NULL),
-(NULL, NULL, 'C2222', NULL, NULL, 'computer', '5', '24', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -135,17 +123,6 @@ CREATE TABLE `shoppingkart` (
   `pquality` varchar(45) DEFAULT NULL,
   `price` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `shoppingkart`
---
-
-INSERT INTO `shoppingkart` (`custid`, `prodid`, `pname`, `pquality`, `price`) VALUES
-(NULL, '123456', '55555555', '55555', '55'),
-(NULL, 'A12322', 'dssdds', '121435', '1231313'),
-(NULL, 'A2322', '23332r', '12233', '12'),
-(NULL, 'A543', 'fridge', 'good', '22'),
-(NULL, 'C2222', 'computer', '5', '24');
 
 --
 -- Indexes for dumped tables
